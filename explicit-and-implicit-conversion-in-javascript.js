@@ -19,14 +19,28 @@ Use console.log() to clearly show the before-and-after type conversions.
 */
 
 
-let result = "5" - 2;
+let result = Number("5") - 2; // explicitly converts the string "5" to the number 5, resulting in a clear numerical subtraction.
 console.log("The result is: " + result);
 
-let isValid = Boolean("false");
+let isValid = Boolean(false); // Boolean(false) explicitly creates the boolean value false, making isValid false and preventing the if statement from running.
 if (isValid) {
     console.log("This is valid!");
 }
 
 let age = "25";
-let totalAge = age + 5;
+let totalAge = Number(age) + 5; // explicitly converts the string "25" to the number 25 so that 5 can be added mathmatically instead of being concatenated as text.
 console.log("Total Age: " + totalAge);
+
+let daysRemaining = null + 3; // JavaScript implicitly converts null to 0, so the result is the number 3.
+console.log(daysRemaining);
+console.log(typeof null); // object
+console.log(typeof daysRemaining); // number
+
+let routeNumber = 66;
+console.log(routeNumber); 
+console.log(typeof routeNumber); // number
+
+let motherRoad = String(routeNumber); // JavaScript explicitly converts the number 66 into the string "66".
+console.log(motherRoad);
+console.log(typeof motherRoad); // string
+
